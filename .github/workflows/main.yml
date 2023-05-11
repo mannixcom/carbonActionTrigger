@@ -8,5 +8,5 @@ jobs:
     steps:
       - name: Get Best Time of Task
         run: |
-          npm install axios
-          npm start
+          npm install
+          npm -- start
