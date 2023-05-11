@@ -1,0 +1,17 @@
+name: Check API and Best Time of Task
+on:
+  schedule:
+    - cron: "0 * * * *"
+jobs:
+  check-api-and-best-time-of-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Best Time of Task
+        if: ${{ job.status == 'success' }}
+        run: |
+          npm install axios nodemailer
+          node get-best-time.js
+        env:
+          EMAIL_FROM: mannix.carney@ardanis.com
+          EMAIL_TO: mannix.carney@ardanis.com
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
