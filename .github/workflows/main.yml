@@ -11,6 +11,6 @@ jobs:
         run: pwd
       - name: Get Best Time of Task
         run: |
-          cd carbonActionTrigger
+          cd /home/runner/work/carbonActionTrigger/carbonActionTrigger
           npm install
           npm start
