@@ -58,4 +58,4 @@ function bestTimeOfATask() {
 //       console.log("Email sent: " + info.response);
 //     }
 //   });
-});
+// });
