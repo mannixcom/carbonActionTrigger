@@ -30,4 +30,6 @@ function bestTimeOfATask() {
     });
 }
 
+bestTimeOfATask();
+
 
