@@ -1,9 +1,9 @@
 const axios = require("axios");
 const nodemailer = require("nodemailer");
 
-const EMAIL_FROM = process.env.EMAIL_FROM;
-const EMAIL_TO = process.env.EMAIL_TO;
-const EMAIL_PASS = process.env.EMAIL_PASS;
+// const EMAIL_FROM = process.env.EMAIL_FROM;
+// const EMAIL_TO = process.env.EMAIL_TO;
+// const EMAIL_PASS = process.env.EMAIL_PASS;
 
 function bestTimeOfATask() {
   const location = ['uksouth']
@@ -35,27 +35,27 @@ function bestTimeOfATask() {
     });
 }
 
-bestTimeOfATask().then((bestTime) => {
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: EMAIL_FROM,
-      pass: EMAIL_PASS,
-    },
-  });
+// bestTimeOfATask().then((bestTime) => {
+//   const transporter = nodemailer.createTransport({
+//     service: "gmail",
+//     auth: {
+//       user: EMAIL_FROM,
+//       pass: EMAIL_PASS,
+//     },
+//   });
 
-  const mailOptions = {
-    from: EMAIL_FROM,
-    to: EMAIL_TO,
-    subject: "Best Time of Task",
-    text: `The best time of the task is ${bestTime}.`,
-  };
+//   const mailOptions = {
+//     from: EMAIL_FROM,
+//     to: EMAIL_TO,
+//     subject: "Best Time of Task",
+//     text: `The best time of the task is ${bestTime}.`,
+//   };
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error(error);
-    } else {
-      console.log("Email sent: " + info.response);
-    }
-  });
+//   transporter.sendMail(mailOptions, (error, info) => {
+//     if (error) {
+//       console.error(error);
+//     } else {
+//       console.log("Email sent: " + info.response);
+//     }
+//   });
 });
