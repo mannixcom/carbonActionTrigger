@@ -9,4 +9,4 @@ jobs:
       - name: Get Best Time of Task
         run: |
           npm install axios
-          node get-best-time.js
+          npm start
