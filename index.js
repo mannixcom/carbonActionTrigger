@@ -3,8 +3,8 @@ const axios = require('axios');
 async function bestTimeOfATask() {
   const location = ['uksouth'];
   const now = new Date();
-  const dataStartAt = new Date(now.getTime() + 3 * 60000).toISOString();
-  const dataEndAt = new Date(now.getTime() + 243 * 60000).toISOString();
+  const dataStartAt = new Date(now.getTime() + 5 * 60000).toISOString();
+  const dataEndAt = new Date(now.getTime() + 245 * 60000).toISOString();
   const windowSize = 30;
   const params = new URLSearchParams();
   params.append('location', location);
@@ -30,6 +30,6 @@ async function bestTimeOfATask() {
     });
 }
 
-await bestTimeOfATask();
+ bestTimeOfATask();
 
 
