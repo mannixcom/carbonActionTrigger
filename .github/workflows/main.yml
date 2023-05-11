@@ -1,7 +1,6 @@
 name: Check API and Best Time of Task
 on:
-  schedule:
-    - cron: "*/1 * * * *"
+    workflow_dispatch:
 jobs:
   check-api-and-best-time-of-task:
     runs-on: ubuntu-latest
