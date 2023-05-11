@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-function bestTimeOfATask() {
+async function bestTimeOfATask() {
   const location = ['uksouth'];
   const now = new Date();
   const dataStartAt = new Date(now.getTime() + 3 * 60000).toISOString();
@@ -30,6 +30,6 @@ function bestTimeOfATask() {
     });
 }
 
-bestTimeOfATask();
+await bestTimeOfATask();
 
 
