@@ -9,4 +9,4 @@ jobs:
         working-directory: ./carbonActionTrigger
         run: |
           npm install
-          npm start
+          npm -- start
