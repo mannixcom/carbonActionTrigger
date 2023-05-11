@@ -1,7 +1,7 @@
 name: Check API and Best Time of Task
 on:
   schedule:
-    - cron: "/2 * * * *"
+    - cron: "*/2 * * * *"
 jobs:
   check-api-and-best-time-of-task:
     runs-on: ubuntu-latest
