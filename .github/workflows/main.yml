@@ -8,5 +8,6 @@ jobs:
       - name: Get Best Time of Task
         working-directory: ./carbonActionTrigger
         run: |
+          ls
           npm install
-          npm -- start
+          node index.js
