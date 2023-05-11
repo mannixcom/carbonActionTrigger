@@ -1,13 +1,21 @@
 name: Check API and Best Time of Task
+
 on:
-    workflow_dispatch:
+  workflow_dispatch:
+
 jobs:
   check-api-and-best-time-of-task:
     runs-on: ubuntu-latest
     steps:
       - name: Get Best Time of Task
-        working-directory: ./carbonActionTrigger
         run: |
-          ls
+          pwd
+          ls -al
+          cd carbonActionTrigger
+          pwd
+          ls -al
+          cd carbonActionTrigger
+          pwd
+          ls -al
           npm install
-          node index.js
+          npm start
