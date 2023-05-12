@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios';
 
 async function bestTimeOfATask() {
   const location = ['uksouth'];
@@ -13,23 +13,22 @@ async function bestTimeOfATask() {
   params.append('windowSize', windowSize);
 
   const url = `https://carbon-aware-api.azurewebsites.net/emissions/forecasts/current?${params.toString()}`;
-  console.log(url);
   const headers = {
     'Content-Type': 'application/json',
   };
 
-  return axios
-    .get(url, { headers, params })
-    .then((response) => {
-      const averageEmissionsData = response.data;
-      console.log(averageEmissionsData[0].optimalDataPoints[0].timestamp);
-      return averageEmissionsData;
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+  try {
+    const response = await axios.get(url, { headers, params });
+    const averageEmissionsData = response.data;
+    console.log(averageEmissionsData[0].optimalDataPoints[0].timestamp);
+    console.log('____________________FullData____________________');
+    averageEmissionsData[0].forecastData.map((data) => console.log('uksouth time and carbon score ',data.timestamp, data.value));
+    return averageEmissionsData;
+  } catch (error) {
+    console.error(error);
+  }
 }
+await bestTimeOfATask()
 
- bestTimeOfATask();
 
 
