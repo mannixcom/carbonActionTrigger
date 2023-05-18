@@ -20,8 +20,10 @@ async function bestTimeOfATask() {
   try {
     const response = await axios.get(url, { headers, params });
     const averageEmissionsData = response.data;
+    console.log('Question: Based in uksouth, when is the most carbon effective time to run a 30 minute task in the next 4 hours?')
+    console.log('____________________Best Time____________________');
     console.log(averageEmissionsData[0].optimalDataPoints[0].timestamp);
-    console.log('____________________FullData____________________');
+    console.log('____________________Full Data____________________');
     averageEmissionsData[0].forecastData.map((data) => console.log('uksouth time and carbon score ',data.timestamp, data.value));
     return averageEmissionsData;
   } catch (error) {

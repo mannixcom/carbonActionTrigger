@@ -1,6 +1,7 @@
 name: Check API and Best Time of Task
 on:
   workflow_dispatch:
+  repository_dispatch:
 jobs:
   check-api-and-best-time-of-task:
     runs-on: ubuntu-latest
